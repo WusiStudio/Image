@@ -1,33 +1,32 @@
-# Object files
-*.o
-*.ko
+Debug/
+Release/
+.vscode/
+.vs/
+*.log
 *.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
+*.pdb
+*.tlog
 *.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+*.ncb
+*.plg
+*.pch
+*.idb
+*.exp
+*.aps
+*.opt
+*.sdf
+*.ipch
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+HTML/
 
-# Debug files
-*.dSYM/
-*.su
+~*.*
+Build/
+build/
+/tags
+.*.swp
+*.autosave
+.DS_Store
+.*.json
