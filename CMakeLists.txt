@@ -19,7 +19,7 @@ ADD_EXECUTABLE(wsimg_test ${PROJECT_SOURCE_DIR}/test/wsimg_test.c)
 
 #输出路径-----------------------------------------------
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_ROOT_DIR}/build/bin)
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_ROOT_DIR}/build/bin)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_ROOT_DIR}/build/bin/test/)
 
 #链接库-------------------------------------------------
 TARGET_LINK_LIBRARIES(wsimg_test ${PROJECT_NAME})
