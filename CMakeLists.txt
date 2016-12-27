@@ -26,9 +26,6 @@ ADD_EXECUTABLE(wsimg_test ${PROJECT_SOURCE_DIR}/test/wsimg_test.c)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_ROOT_DIR}/build/bin)
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_ROOT_DIR}/build/bin/test/)
 
-#链接库-------------------------------------------------
-TARGET_LINK_LIBRARIES(wsimg_test ${PROJECT_NAME})
-
 #设置编译选项-------------------------------------------
 IF(WIN32)
     # DEBUG RELEASE
@@ -38,8 +35,16 @@ IF(WIN32)
 ELSEIF(APPLE)
     SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -m64 -O0 -Wall -g")
     SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -m64 -O3 -Wall")
-
 ELSEIF(UNIX)
+    SET(LINUX TRUE)
+    
     SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -m64 -O0 -Wall -g")
     SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -m64 -O3 -Wall")
+ENDIF()
+
+#链接库-------------------------------------------------
+IF(LINUX)
+    TARGET_LINK_LIBRARIES(wsimg_test ${PROJECT_NAME} m)
+ELSE()
+    TARGET_LINK_LIBRARIES(wsimg_test ${PROJECT_NAME})
 ENDIF()
